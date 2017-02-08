@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+			
+		.Square {
+			width:40px;
+			height:40px;
+			text-align:center;
+			font-size:18pt;
+			font-weight:bold;
+			font-family:verdana;
+		}
+
+	</style>
+
+</head>
+<body onload="startGame();">
+
+<h1>Welcome to my Tic-Tc-Toe Game!</h1>
+<div id="message">Messages will go here</div>
+
+<table border="1">
+	<tr>
+		<td class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" onclick="nextMove(this);"></td>
+	</tr>
+	<tr>
+		<td class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" onclick="nextMove(this);"></td>
+	</tr>
+	<tr>
+		<td class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" onclick="nextMove(this);"></td>
+	</tr>
+
+</table>
+
+<script type="text/javascript">
+	
+	function startGame(){
+		document.turn = "x";
+
+		setMessage(document.turn + ' gets to start');
+
+	}
+
+	function setMessage(msg){
+		document.getElementById('message').innerText = msg;
+	}
+
+	function nextMove(square){
+		square.innerText = document.turn;
+		switchTurn();
+	}
+
+	function switchTurn(){
+		if(document.turn == "x") {
+			document.turn = "o";
+		} else {
+			document.turn = "x";
+		}
+	}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
